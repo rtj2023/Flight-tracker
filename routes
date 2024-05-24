@@ -1,0 +1,15 @@
+// Import necessary modules
+const express = require('express');
+const router = express.Router();
+
+// Import controllers for handling requests
+const flightController = require('../controllers/flightController');
+const userController = require('../controllers/userController');
+
+// Define routes
+router.get('/flights', flightController.getAllFlights);
+router.get('/flights/:flightNumber', flightController.getFlightByNumber);
+router.post('/flights/search', flightController.searchFlights);
+router.post('/flights/book', flightController.bookFlight);
+
+
